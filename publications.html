@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Milestone1 from @PaulaSantos: HTML document with a form.">
+    <meta name="keywords" content="HTML, CSS">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Paula Angeriz-Santos">
+    <title>Paula Angeriz-Santos - Milestone 4 - Publications</title>
+    <link href="./style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About us</a></li>
+                <li><a href="./publications.html">Publications store</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Publications store</h1>
+            <p>You can buy our publications below.</p>
+        </section>
+        <section class="FizzBuzz">
+            <form id="fizzForm">
+                <p><b>Title: Book 1</b></p>
+                <img src="https://media.gettyimages.com/photos/stack-of-books-picture-id157482029?s=612x612">
+                <p>Price: £25</p>
+                <input type="button" id="submitBtn" value="Add to basket">
+                <br>
+                <p><b>Title: Book 2</b></p>
+                <img src="https://media.gettyimages.com/photos/stack-of-books-picture-id157482029?s=612x612">
+                <p>Price: £30</p>
+                <input type="button" id="submitBtn" value="Add to basket">
+                <br>
+                <p><b>Title: Book 3</b></p>
+                <img src="https://media.gettyimages.com/photos/stack-of-books-picture-id157482029?s=612x612">
+                <p>Price: £20</p>
+                <input type="button" id="submitBtn" value="Add to basket">
+            </form>
+            <h2 id="contact">Shopping basket:</h2>
+            <form id="fizzForm">
+                <img src="https://media.gettyimages.com/photos/stack-of-books-picture-id157482029?s=612x612">
+                <p><b>Title: Book 1</b></p>
+                <p>Price: £25</p>
+                <label for="number">Quantity:</label>
+                <input type="number" id="fizzValue" name="number" min="1" max="20">
+                <input id="reset" type="reset" value="Remove">
+                <br>
+                <img src="https://media.gettyimages.com/photos/stack-of-books-picture-id157482029?s=612x612">
+                <p><b>Title: Book 3</b></p>
+                <p>Price: £20</p>
+                <label for="number">Quantity:</label>
+                <input type="number" id="fizzValue" name="number" min="1" max="20">
+                <input id="reset" type="reset" value="Remove">
+            </form>
+
+            <ul id="results"></ul>
+        </section>
+    </main>
+    <script>
+        const form = document.getElementById('fizzForm')
+        const input = document.getElementById('fizzValue')
+        console.log("IT WORKS!")
+        console.log(form, input)
+        const submitBtn = document.getElementById('submitBtn')
+        const submitHandler = function (event) {
+
+            // prevents form from reloading    
+            event.preventDefault()
+
+            // cleans up results
+            results.innerHTML = ''
+
+            // populates results again
+            for (let i = 1; i <= input.value; i++) {
+                const newLi = document.createElement("li")
+                newLi.innerText = i;
+                results.append(newLi)
+
+                // adds fizzBuzzCounter
+                const fizzValueCounter = function (n) {
+                    for (let i = 1; i <= n; i++) {
+                        console.log(fizzBuzz(i));
+                    }
+                }
+
+                // adds fizzBuzz
+                const fizzValue = function (n) {
+                    let result = "";
+                    if (n % 3 === 0) result += "Fizz";
+                    if (n % 5 === 0) result += "Buzz";
+                    if (n % 3 && n % 5) result += n;
+                    return result;
+                }
+
+
+                // closes FOR loop
+            }
+
+
+
+
+            /*console.log(input.value)
+            console.log(event, event.target)*/
+        }
+        submitBtn.onclick = submitHandler
+        // equivalent to
+        // submit.addEventListener("onclick", submitHandler)
+
+    </script>
+</body>
+
+</html>
