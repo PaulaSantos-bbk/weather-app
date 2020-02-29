@@ -20,13 +20,13 @@ const KELVIN = 273;
 // api key
 const key = "6985a5575fd7621a70f1a7465884a1a3";
 
-// Check if browser supports geolocation
+// Check if user browser supports geolocation
 if ("geolocation" in navigator) {
     navigator.geolocation.getCurrentPosition(setPosition, showError);
 }
 else {
     notificationElement.display = "block";
-    notificationElement.innerHTML = "<p>Location not identified</p>";
+    notificationElement.innerHTML = "<p>Browser doesn't support geolocation</p>";
 }
 
 //set users' position
@@ -37,7 +37,7 @@ function setPosition(position) {
     getWeather(latitude, longitude);
 }
 
-// Show error when geolocation identified
+// Show error when geolocation not identified
 function showError(error) {
     notificationElement.display = "block";
     notificationElement.innerHTML = `<p> ${error.message} </p>`;
