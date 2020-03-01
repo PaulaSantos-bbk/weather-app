@@ -21,16 +21,17 @@
         <main>
             <section>
                 <h2>What's the weather like in...</h2>
-                <form>
+                <form id="location-choice">
 
-                    <label for="city">Choose a city:</label>
-                    <input type="text" list="cities" id="city" name="city">
-
-                    <datalist id="cities">
+                    <label for="city">Select a city:</label>
+                    <select id="cities">
+                        <option>weather for...</option>
                         <option value="London">London</option>
                         <option value="New York">New York</option>
                         <option value="A Coruna">A Coruna</option>
-                    </datalist>
+                    </select>
+                    <button type="button" onclick="getFormValues()">Go!</button>
+                    <h3 id="location-result"></h3>
                 </form>
 
 
@@ -38,7 +39,7 @@
             <section>
                 <div class="container">
                     <div class="app-title">
-                        <h2>Weather</h2>
+                        <h2>Your local weather</h2>
                     </div>
                     <div class="notification"></div>
                     <div class="weather-container">

@@ -100,6 +100,11 @@ tempElement.addEventListener("click", function () {
 
 
 
+//Select values from HTML form
+function getFormValues() {
+    let x = document.getElementById("cities").value;
+    document.getElementById("location-result").innerHTML = `${x}`;
+}
 
 
 
@@ -108,20 +113,14 @@ tempElement.addEventListener("click", function () {
 
 
 
+//req.then(function (resp) {
+    //let prefix = 'wi wi-';
+    //let code = resp.weather[0].id;
+    //let icon = weatherIcons[code].icon;
 
+    //if (!(code > 699 && code < 800) && !(code > 899 && code < 1000)) {
+      //  icon = 'day-' + icon;
+    //}
 
-
-
-
-
-req.then(function (resp) {
-    let prefix = 'wi wi-';
-    let code = resp.weather[0].id;
-    let icon = weatherIcons[code].icon;
-
-    if (!(code > 699 && code < 800) && !(code > 899 && code < 1000)) {
-        icon = 'day-' + icon;
-    }
-
-    icon = prefix + icon;
-});
+    //icon = prefix + icon;
+//});
