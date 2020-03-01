@@ -106,21 +106,31 @@ function getFormValues() {
     document.getElementById("location-result").innerHTML = `${x}`;
 }
 
+// Get weather from api provider for London
+function getWeatherFromForm() {
+    let api = `http://api.openweathermap.org/data/2.5/weather?q=London&appid=${key}`;
+
+    fetch(api)
+        .then(function (response) {
+            let data = response.json();
+            return data;
+        })
+
+        .then(function (data) {
+            weather.temperature.value = Math.floor(data.main.temp - KELVIN);
+            weather.description = data.weather[0].description;
+            weather.iconId = data.weather[0].icon;
+        })
+        .then(function () {
+            displayWeather();
+        })
+}
 
 
 
+// Code to get icons displaying
+let iconCode = data.weather[0].icon;
+let iconUrl = "http://openweathermap.org/img/wn/" + iconCode + ".png";
+$(".icon").html("<img src='http://openweathermap.org/img/wn/" + data.weather[0].icon + ".png' alt='Icon depicting current weather.'>");
 
 
-
-
-//req.then(function (resp) {
-    //let prefix = 'wi wi-';
-    //let code = resp.weather[0].id;
-    //let icon = weatherIcons[code].icon;
-
-    //if (!(code > 699 && code < 800) && !(code > 899 && code < 1000)) {
-      //  icon = 'day-' + icon;
-    //}
-
-    //icon = prefix + icon;
-//});
