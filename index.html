@@ -9,7 +9,7 @@
     <meta name="author" content="Paula Angeriz-Santos">
     <title>Weather app</title>
     <link href="./style.css" rel="stylesheet">
-    <script src="./script.js" async></script>
+    <script src="./script-test.js" async></script>
 </head>
 
 <body>
@@ -26,6 +26,7 @@
                     <label for="city">Select a city:</label>
                     <select id="cities">
                         <option>weather for...</option>
+                        <option value="Your location">Your location</option>
                         <option value="London">London</option>
                         <option value="New York">New York</option>
                         <option value="A Coruna">A Coruna</option>
@@ -39,7 +40,6 @@
             <section>
                 <div class="container">
                     <div class="app-title">
-                        <h2>Your local weather</h2>
                     </div>
                     <div class="notification"></div>
                     <div class="weather-container">
