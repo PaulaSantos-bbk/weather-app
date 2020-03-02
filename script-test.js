@@ -87,7 +87,18 @@ function getWeather() {
         })
 }
 
-//display weather 
+// Form on 'select' display weather
+cityId.addEventListener("select", function () {
+    if (latitude, longitude = "Your location") {
+        displayWeather()
+    }
+    else if (city = true) {
+        displayWeather()
+    }
+    else (unknown)
+});
+
+//weather display 
 function displayWeather() {
     cityIdElement.innerHTML = `<h2>${cityId}</h2>`;
     iconElement.innerHTML = `<img src="icons/$(weather.iconId).png"/>`;
@@ -127,16 +138,7 @@ let iconUrl = "http://openweathermap.org/img/wn/" + iconCode + ".png";
 $(".icon").html("<img src='http://openweathermap.org/img/wn/" + data.weather[0].icon + ".png' alt='Icon depicting current weather.'>");
 
 
-// Form on click display weather
-cityId.addEventListener("select", function () {
-    if (latitude, longitude = "Your location") {
-        displayWeather()
-    }
-    else if (city = true) {
-        displayWeather()
-    }
-    else (unknown)
-});
+
 
 
 
