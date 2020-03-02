@@ -121,10 +121,9 @@ function getFormValues() {
     let x = document.getElementById("cityId").value;
     document.getElementById("cityId").innerHTML = Date();
     document.getElementById("location-result").innerHTML = `<h2>${x}</h2>`;
+    document.getElementById("date-today").innerHTML = Date()
 }
-
-// Form on 'select' display weather
-cityId.addEventListener("onSelect", function () {
+getFormValues.addEventListener("onClick", function getFormValues() {
     if (position = true) {
         displayWeather(latitude, longitude)
     }
@@ -133,9 +132,8 @@ cityId.addEventListener("onSelect", function () {
     }
     else (unknown)
 });
-getFormValues.addEventListener('onClick', function () {
-    displayWeather()
-});
+
+
 
 // Code to get icons to display
 let iconCode = data.weather[0].icon;
