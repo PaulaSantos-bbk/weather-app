@@ -126,10 +126,10 @@ function getFormValues() {
 // Form on 'select' display weather
 cityId.addEventListener("select", function () {
     if (latitude, longitude = "Your location") {
-        displayWeather()
+        displayWeather(latitude, longitude)
     }
     else if (city = "London", "New York", "A Coruna") {
-        displayWeather()
+        displayWeather(city)
     }
     else (unknown)
 });
