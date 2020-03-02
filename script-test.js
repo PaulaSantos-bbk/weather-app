@@ -56,7 +56,7 @@ function setCity() {
     let api = (`http://api.openweathermap.org/data/2.5/forecast?id=3119841&appid=${key}`);
     let city = ("A Coruna" === 3119841);
 
-    getWeather(cityId)
+    getWeather(city)
 }
 
 // Show error when geolocation not identified
@@ -87,16 +87,6 @@ function getWeather() {
         })
 }
 
-// Form on 'select' display weather
-cityId.addEventListener("select", function () {
-    if (latitude, longitude = "Your location") {
-        displayWeather()
-    }
-    else if (city = true) {
-        displayWeather()
-    }
-    else (unknown)
-});
 
 //weather display 
 function displayWeather() {
@@ -131,6 +121,18 @@ tempElement.addEventListener("click", function () {
     }
 
 });
+
+// Form on 'select' display weather
+cityId.addEventListener("select", function () {
+    if (latitude, longitude = "Your location") {
+        displayWeather()
+    }
+    else if (city = "London", "New York", "A Coruna") {
+        displayWeather()
+    }
+    else (unknown)
+});
+
 
 // Code to get icons to display
 let iconCode = data.weather[0].icon;
