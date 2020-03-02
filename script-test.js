@@ -38,7 +38,7 @@ function setPosition(position) {
     let longitude = position.coords.longitude;
     let latitude, longitude = "Your location";
 
-    getWeather(latitude, longitude);
+    getWeather(position);
 }
 
 //set users' city choices from dropdown
@@ -84,7 +84,6 @@ function getWeather() {
 
 //weather display 
 function displayWeather() {
-    cityIdElement.innerHTML = `<h2>${cityId}</h2>`;
     iconElement.innerHTML = `<img src="icons/$(weather.iconId).png"/>`;
     tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
     descElement.innerHTML = weather.description;
@@ -120,20 +119,23 @@ tempElement.addEventListener("click", function () {
 //Select values from HTML form
 function getFormValues() {
     let x = document.getElementById("cityId").value;
+    document.getElementById("cityId").innerHTML = Date();
     document.getElementById("location-result").innerHTML = `<h2>${x}</h2>`;
 }
 
 // Form on 'select' display weather
-cityId.addEventListener("select", function () {
-    if (latitude, longitude = "Your location") {
+cityId.addEventListener("onSelect", function () {
+    if (position = true) {
         displayWeather(latitude, longitude)
     }
-    else if (city = "London", "New York", "A Coruna") {
+    else if (city = true) {
         displayWeather(city)
     }
     else (unknown)
 });
-
+getFormValues.addEventListener('onClick', function () {
+    displayWeather()
+});
 
 // Code to get icons to display
 let iconCode = data.weather[0].icon;

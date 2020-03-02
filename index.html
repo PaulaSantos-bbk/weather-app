@@ -24,14 +24,14 @@
                 <form id="location-choice">
 
                     <label for="city">Select a city:</label>
-                    <select id="cityId" class="cityId">
-                        <option>weather for...</option>
+                    <select id="city" class="city-location">
+                        <option value="">weather for...</option>
                         <option value="Your location">Your location</option>
                         <option value="London">London</option>
                         <option value="New York">New York</option>
                         <option value="A Coruna">A Coruna</option>
                     </select>
-                    <button type="button" onclick="getFormValues()">Go!</button>
+                    <button id="go" type="button" onClick="getFormValues();">Go!</button>
                     <h2></h2>
                 </form>
 
