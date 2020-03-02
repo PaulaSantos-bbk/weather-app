@@ -2,6 +2,7 @@
 // api key : 6985a5575fd7621a70f1a7465884a1a3
 
 // Select elements
+const cityElement = document.querySelector(".city h2");
 const iconElement = document.querySelector(".weather-icon");
 const tempElement = document.querySelector(".temperature-value p");
 const descElement = document.querySelector(".temperature-description p");
@@ -45,12 +46,16 @@ function setPosition(position) {
     getWeather(latitude, longitude);
 }
 
-function setCity(city) {
+//set users' city choices from dropdown
+function setCity() {
     let api = (`http://api.openweathermap.org/data/2.5/weather?q=London&appid=${key}`);
+    let cityName = "London";
     let api = (`http://api.openweathermap.org/data/2.5/weather?q=New York&appid=${key}`);
+    let cityName = "New York";
     let api = (`http://api.openweathermap.org/data/2.5/weather?q=A Coruna&appid=${key}`);
+    let cityName = "A Coruna";
 
-    getWeather(city)
+    getWeather(cityName)
 }
 
 // Show error when geolocation not identified
@@ -83,6 +88,7 @@ function getWeather() {
 
 //display weather 
 function displayWeather() {
+    cityElement.innerHTML = `${cityName}`;
     iconElement.innerHTML = `<img src="icons/$(weather.iconId).png"/>`;
     tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
     descElement.innerHTML = weather.description;
@@ -114,8 +120,11 @@ tempElement.addEventListener("click", function () {
 
 });
 
-
-
+// Form on click display weather
+cityElement.addEventListener("click", function () {
+    if (position === latitude, longitude) return;
+    else (cityName = true) => displayWeather();
+});
 
 // Code to get icons to display
 let iconCode = data.weather[0].icon;
