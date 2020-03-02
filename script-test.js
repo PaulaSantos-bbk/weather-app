@@ -2,7 +2,7 @@
 // api key : 6985a5575fd7621a70f1a7465884a1a3
 
 // Select elements
-const cityElement = document.querySelector(".city h2");
+const cityId = document.querySelector(".city h2");
 const iconElement = document.querySelector(".weather-icon");
 const tempElement = document.querySelector(".temperature-value p");
 const descElement = document.querySelector(".temperature-description p");
@@ -42,20 +42,21 @@ function setPosition(position) {
     let api = (`http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`);
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
+    let latitude, longitude = "Your location";
 
     getWeather(latitude, longitude);
 }
 
 //set users' city choices from dropdown
 function setCity() {
-    let api = (`http://api.openweathermap.org/data/2.5/weather?q=London&appid=${key}`);
-    let cityName = "London";
-    let api = (`http://api.openweathermap.org/data/2.5/weather?q=New York&appid=${key}`);
-    let cityName = "New York";
-    let api = (`http://api.openweathermap.org/data/2.5/weather?q=A Coruna&appid=${key}`);
-    let cityName = "A Coruna";
+    let api = (`http://api.openweathermap.org/data/2.5/forecast?id=2643743&appid=${key}`);
+    let cityId = ("London" === 2643743);
+    let api = (`http://api.openweathermap.org/data/2.5/forecast?id=5128638&appid=${key}`);
+    let cityId = ("New York" === 5128638);
+    let api = (`http://api.openweathermap.org/data/2.5/forecast?id=3119841&appid=${key}`);
+    let cityId = ("A Coruna" === 3119841);
 
-    getWeather(cityName)
+    getWeather(cityId)
 }
 
 // Show error when geolocation not identified
@@ -120,15 +121,28 @@ tempElement.addEventListener("click", function () {
 
 });
 
-// Form on click display weather
-cityElement.addEventListener("click", function () {
-    if (position === latitude, longitude) return;
-    else (cityName = true) => displayWeather();
-});
-
 // Code to get icons to display
 let iconCode = data.weather[0].icon;
 let iconUrl = "http://openweathermap.org/img/wn/" + iconCode + ".png";
 $(".icon").html("<img src='http://openweathermap.org/img/wn/" + data.weather[0].icon + ".png' alt='Icon depicting current weather.'>");
+
+
+// Form on click display weather
+cityiD.addEventListener("click", function () {
+    if (latitude, longitude = "Your location") {
+        displayWeather()
+    }
+    else if (cityId = 2643743) {
+        displayWeather()
+    }
+    else if (cityId = 5128638) {
+        displayWeather()
+    }
+    else if (cityId = 3119841) {
+        displayWeather()
+    }
+    else (unknown)
+});
+
 
 
