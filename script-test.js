@@ -2,7 +2,7 @@
 // api key : 6985a5575fd7621a70f1a7465884a1a3
 
 // Select elements
-const cityId = document.querySelector(".city h2");
+const cityId = document.querySelector(".city select");
 const iconElement = document.querySelector(".weather-icon");
 const tempElement = document.querySelector(".temperature-value p");
 const descElement = document.querySelector(".temperature-description p");
@@ -50,11 +50,11 @@ function setPosition(position) {
 //set users' city choices from dropdown
 function setCity() {
     let api = (`http://api.openweathermap.org/data/2.5/forecast?id=2643743&appid=${key}`);
-    let cityId = ("London" === 2643743);
+    let city = ("London" === 2643743);
     let api = (`http://api.openweathermap.org/data/2.5/forecast?id=5128638&appid=${key}`);
-    let cityId = ("New York" === 5128638);
+    let city = ("New York" === 5128638);
     let api = (`http://api.openweathermap.org/data/2.5/forecast?id=3119841&appid=${key}`);
-    let cityId = ("A Coruna" === 3119841);
+    let city = ("A Coruna" === 3119841);
 
     getWeather(cityId)
 }
@@ -89,7 +89,7 @@ function getWeather() {
 
 //display weather 
 function displayWeather() {
-    cityElement.innerHTML = `${cityName}`;
+    cityIdElement.innerHTML = `<h2>${cityId}</h2>`;
     iconElement.innerHTML = `<img src="icons/$(weather.iconId).png"/>`;
     tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
     descElement.innerHTML = weather.description;
@@ -132,13 +132,7 @@ cityiD.addEventListener("click", function () {
     if (latitude, longitude = "Your location") {
         displayWeather()
     }
-    else if (cityId = 2643743) {
-        displayWeather()
-    }
-    else if (cityId = 5128638) {
-        displayWeather()
-    }
-    else if (cityId = 3119841) {
+    else if (city = true) {
         displayWeather()
     }
     else (unknown)
