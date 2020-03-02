@@ -128,7 +128,7 @@ $(".icon").html("<img src='http://openweathermap.org/img/wn/" + data.weather[0].
 
 
 // Form on click display weather
-cityiD.addEventListener("click", function () {
+cityId.addEventListener("select", function () {
     if (latitude, longitude = "Your location") {
         displayWeather()
     }
