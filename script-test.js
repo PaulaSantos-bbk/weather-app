@@ -21,12 +21,6 @@ const KELVIN = 273;
 // api key
 const key = "6985a5575fd7621a70f1a7465884a1a3";
 
-//Select values from HTML form
-function getFormValues() {
-    let x = document.getElementById("cities").value;
-    document.getElementById("location-result").innerHTML = `${x}`;
-}
-
 
 // Check if user browser supports geolocation
 if ("geolocation" in navigator) {
@@ -121,6 +115,13 @@ tempElement.addEventListener("click", function () {
     }
 
 });
+
+
+//Select values from HTML form
+function getFormValues() {
+    let x = document.getElementById("cityId").value;
+    document.getElementById("location-result").innerHTML = `<h2>${x}</h2>`;
+}
 
 // Form on 'select' display weather
 cityId.addEventListener("select", function () {
