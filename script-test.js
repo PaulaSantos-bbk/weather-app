@@ -36,7 +36,6 @@ function setPosition(position) {
     let api = (`http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`);
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
-    let latitude, longitude = "Your location";
 
     getWeather(position);
 }
@@ -127,7 +126,7 @@ getFormValues.addEventListener("onClick", function getFormValues() {
     if (position = true) {
         displayWeather(latitude, longitude)
     }
-    else if (city = true) {
+    else if (city = "London" || "New York" || "A Coruna") {
         displayWeather(city)
     }
     else (unknown)
