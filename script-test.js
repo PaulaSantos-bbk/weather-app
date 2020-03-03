@@ -36,6 +36,7 @@ function setPosition(position) {
     let api = (`http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`);
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
+    let position = "Your location";
 
     getWeather(position);
 }
