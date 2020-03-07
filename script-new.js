@@ -28,25 +28,4 @@ form.addEventListener('submit', (e) => {
     }).catch((err) => {
         console.log(err.message)
     })
-}
-
-
-
-
-
-
-//function getFormValues() {
-
-//        addEventListener("onClick", function getFormValues() {
- //           if (cityId === "2643743") {
- //               getWeather('London weather')
- //           }
- //           if (cityId === "5128638") {
- //               getWeather('New York weather')
-   //         }
- //           if (cityId === "3119841") {
- //               getWeather('A Coruna weather')
-     //       }
- //           else (unknown)
-  //      })
-    //}
+})
