@@ -9,7 +9,7 @@
     <meta name="author" content="Paula Angeriz-Santos">
     <title>Weather app</title>
     <link href="./style.css" rel="stylesheet">
-    <script src="./script-test.js" async></script>
+    <script src="./script-new.js" async></script>
 </head>
 
 <body>
@@ -21,10 +21,10 @@
         <main>
             <section>
                 <h2>What's the weather like in...</h2>
-                <form id="location-choice">
+                <form id="form">
 
                     <label for="city">Select a city:</label>
-                    <select id="city" class="city-location">
+                    <select id="city-location">
                         <option value="">weather for...</option>
                         <option value="Your location">Your location</option>
                         <option value="London">London</option>
@@ -40,24 +40,18 @@
             </section>
             <section>
                 <div class="container">
-                    <div class="app-title">
+                    <div id="weather-icon">
+                        <img src="icons/unknown.png" alt="">
                     </div>
-                    <div class="notification"></div>
-                    <div class="weather-container">
-                        <div class="weather-icon">
-                            <img src="icons/unknown.png" alt="">
-                        </div>
-                        <div class="temperature-value">
-                            <p>- °<span>C</span></p>
-                        </div>
-                        <div class="temperature-description">
-                            <p>-</p>
-                        </div>
-                        <div class="location">
-                            <p>-</p>
-                        </div>
+                    <div id="temp-value">
+                        <p>- °<span>C</span></p>
                     </div>
-                </div>
+                    <div id="temp-display">
+                        <p>-</p>
+                    </div>
+                    <div id="location">
+                        <p>-</p>
+                    </div>
             </section>
         </main>
     </div>
