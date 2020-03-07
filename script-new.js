@@ -12,20 +12,18 @@ async function getWeather(cityId, apiKey) {
     return json
 }
 
-const form = document.getElementById('form')
-const city = document.getElementById('city');
-const tempDisplay = document.getElementById('temp-display');
-let cityId = '2172797';
 
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault()
-    const apiKey = '6985a5575fd7621a70f1a7465884a1a3';
-    const city = selectCity.value;
+const tempDisplay = document.getElementById(".temperature-value p");
+const descElement = document.querySelector(".temperature-description p");
+const locationElement = document.getElementById(".location p");
+let cityId = '2643743';
+const apiKey = '6985a5575fd7621a70f1a7465884a1a3';
 
-    getWeather(cityId, apiKey).then((json) => {
-        tempDisplay.innerHTML = json.main.temp
-    }).catch((err) => {
-        console.log(err.message)
-    })
+
+getWeather(cityId, apiKey).then((json) => {
+    tempDisplay.innerHTML = json.main.temp
+}).catch((err) => {
+    console.log(err.message)
 })
+

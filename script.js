@@ -43,6 +43,15 @@ function showError(error) {
     notificationElement.innerHTML = `<p> ${error.message} </p>`;
 }
 
+//display weather
+function displayWeather() {
+    //    iconElement.innerHTML = `<img src="icons/$(weather.iconId).png" width="1.875rem"/>`;
+    tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
+    descElement.innerHTML = weather.description;
+    locationElement.innerHTML = `${weather.city}, ${weather.country}`;
+}
+
+
 // Get weather from api provider
 function getWeather(latitude, longitude) {
     let api = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`;
@@ -56,7 +65,7 @@ function getWeather(latitude, longitude) {
         .then(function (data) {
             weather.temperature.value = Math.floor(data.main.temp - KELVIN);
             weather.description = data.weather[0].description;
-            weather.iconId = data.weather[0].icon;
+            //weather.iconId = data.weather[0].icon;
             weather.city = data.name;
             weather.country = data.sys.country;
         })
@@ -65,72 +74,39 @@ function getWeather(latitude, longitude) {
         })
 }
 
-//display weather to UK
-function displayWeather() {
-    iconElement.innerHTML = `<img src="icons/$(weather.iconId).png"/>`;
-    tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
-    descElement.innerHTML = weather.description;
-    locationElement.innerHTML = `${weather.city}, ${weather.country}`;
-}
+
+// Code to get icons displaying
+//let iconCode = data.weather[0].icon;
+//let iconUrl = "http://openweathermap.org/img/wn/" + iconCode + ".png";
+//$(".icon").html("<img src='http://openweathermap.org/img/wn/" + data.weather[0].icon + ".png' alt='Icon depicting //current weather.'>");
+
 
 
 // C to F conversion
-function celsiusToFahrenheit(temperature) {
-    return (temperature * 9 / 5) + 32;
-}
+//function celsiusToFahrenheit(temperature) {
+//    return (temperature * 9 / 5) + 32;
+//}
 
 // When user clicks on the temperature it swaps from C to F
-tempElement.addEventListener("click", function () {
-    if (weather.temperature.value === undefined) return;
+//tempElement.addEventListener("click", function () {
+//    if (weather.temperature.value === undefined) return;
 
-    if (weather.temperature.unit === "celsius") {
-        let fahrenheit = celsiusToFahrenheit(weather.temperature.value);
-        fahrenheit = Math.floor(fahrenheit);
+//   if (weather.temperature.unit === "celsius") {
+//        let fahrenheit = celsiusToFahrenheit(weather.temperature.value);
+//        fahrenheit = Math.floor(fahrenheit);
 
-        tempElement.innerHTML = `${fahrenheit}°<span>F</span>`;
-        weather.temperature.unit = "fahrenheit";
-    }
+//        tempElement.innerHTML = `${fahrenheit}°<span>F</span>`;
+//        weather.temperature.unit = "fahrenheit";
+//    }
 
-    else {
-        tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
-        weather.temperature.unit = "celsius";
-    }
+//    else {
+//        tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
+//        weather.temperature.unit = "celsius";
+//    }
 
-});
-
-
-
-//Select values from HTML form
-function getFormValues() {
-    let x = document.getElementById("cities").value;
-    document.getElementById("location-result").innerHTML = `${x}`;
-}
-
-// Get weather from api provider for London
-function getWeatherFromForm() {
-    let api = `http://api.openweathermap.org/data/2.5/weather?q=London&appid=${key}`;
-
-    fetch(api)
-        .then(function (response) {
-            let data = response.json();
-            return data;
-        })
-
-        .then(function (data) {
-            weather.temperature.value = Math.floor(data.main.temp - KELVIN);
-            weather.description = data.weather[0].description;
-            weather.iconId = data.weather[0].icon;
-        })
-        .then(function () {
-            displayWeather();
-        })
-}
+//});
 
 
 
-// Code to get icons displaying
-let iconCode = data.weather[0].icon;
-let iconUrl = "http://openweathermap.org/img/wn/" + iconCode + ".png";
-$(".icon").html("<img src='http://openweathermap.org/img/wn/" + data.weather[0].icon + ".png' alt='Icon depicting current weather.'>");
 
 
