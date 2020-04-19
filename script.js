@@ -2,11 +2,11 @@
 // api key : 6985a5575fd7621a70f1a7465884a1a3
 
 // Select elements
-const iconElement = document.querySelector(".weather-icon");
-const tempElement = document.querySelector(".temperature-value p");
-const descElement = document.querySelector(".temperature-description p");
-const locationElement = document.querySelector(".location p");
-const notificationElement = document.querySelector(".notification");
+//const iconElement = document.querySelector(".weather-icon");
+const tempElement = document.querySelector("#temperature-value p");
+const descElement = document.querySelector("#temperature-description p");
+const locationElement = document.querySelector("#location p");
+const notificationElement = document.querySelector("#notification");
 
 // App data
 const weather = {};
@@ -82,29 +82,29 @@ function getWeather(latitude, longitude) {
 
 
 
-// C to F conversion
-//function celsiusToFahrenheit(temperature) {
-//    return (temperature * 9 / 5) + 32;
-//}
+//C to F conversion
+function celsiusToFahrenheit(temperature) {
+    return (temperature * 9 / 5) + 32;
+}
 
-// When user clicks on the temperature it swaps from C to F
-//tempElement.addEventListener("click", function () {
-//    if (weather.temperature.value === undefined) return;
+//When user clicks on the temperature it swaps from C to F
+tempElement.addEventListener("click", function () {
+    if (weather.temperature.value === undefined) return;
 
-//   if (weather.temperature.unit === "celsius") {
-//        let fahrenheit = celsiusToFahrenheit(weather.temperature.value);
-//        fahrenheit = Math.floor(fahrenheit);
+    if (weather.temperature.unit === "celsius") {
+        let fahrenheit = celsiusToFahrenheit(weather.temperature.value);
+        fahrenheit = Math.floor(fahrenheit);
 
-//        tempElement.innerHTML = `${fahrenheit}°<span>F</span>`;
-//        weather.temperature.unit = "fahrenheit";
-//    }
+        tempElement.innerHTML = `${fahrenheit}°<span>F</span>`;
+        weather.temperature.unit = "fahrenheit";
+    }
 
-//    else {
-//        tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
-//        weather.temperature.unit = "celsius";
-//    }
+    else {
+        tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
+        weather.temperature.unit = "celsius";
+    }
 
-//});
+});
 
 
 
